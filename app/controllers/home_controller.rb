@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    render json: {timestamp: Time.now.to_i}
+    render file: 'home/index.html.erb'
   end
 
   def timestamp
