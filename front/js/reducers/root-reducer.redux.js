@@ -4,10 +4,10 @@
 
 import { combineReducers } from 'redux';
 
-import serverTimestamp from './server-timestamp.redux';
 import posts from './posts.redux';
+import createPost from './create-post.redux';
 
 export default combineReducers({
   posts,
-  serverTimestamp,
+  createPost
 });

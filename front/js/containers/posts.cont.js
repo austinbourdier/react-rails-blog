@@ -4,9 +4,9 @@
 
 import { connect } from 'react-redux';
 
-import HelloWorld from '../components/hello-world.comp';
-import { fetchServerTimestamp } from '../actions/server-timestamp.action';
+import Posts from '../components/posts.comp';
 import { fetchPosts } from '../actions/posts.action';
+import { createPost } from '../actions/create-post.action';
 
 /**
  * Handle state change and map it to local component props.
@@ -14,9 +14,9 @@ import { fetchPosts } from '../actions/posts.action';
  * @param {Object} state The new app state.
  */
 function mapStateToProps(state) {
+  console.log(state.Posts)
   return {
-    posts: state.posts,
-    serverTimestamp: state.serverTimestamp,
+    posts: state.Posts.posts
   };
 }
 
@@ -27,16 +27,13 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    onFetchServerTimestamp: () => {
-      dispatch(fetchServerTimestamp());
-    },    
-    onFetchPosts: () => {
+    fetchPosts: () => {
       dispatch(fetchPosts());
-    },
+    }
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HelloWorld);
+)(Posts);
