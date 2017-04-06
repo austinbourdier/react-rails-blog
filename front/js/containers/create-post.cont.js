@@ -28,8 +28,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onCreatePostClick: () => {
-      console.log(store.getState().App.createPost.value)
-      dispatch(createPost(store.getState().App.createPost.value));
+      dispatch(createPost(store.getState().CreatePost.value));
     },
     updatePostValue: (event) => {
       dispatch(updatePostValue(event.target.value));

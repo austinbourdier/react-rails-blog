@@ -23,6 +23,7 @@ export default class Posts extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
+
 }
 
 /** @const {Object} propTypes definition */

@@ -14,9 +14,6 @@ const initialState = {
 
 export default handleActions({
   [FETCH_POSTS_SUCCESS]: (state, action) => {
-    console.log(state)
-    state.posts = action.posts;
-    console.log(state)
-    return state;
+    return {posts: action.posts};
   }
 }, initialState);
