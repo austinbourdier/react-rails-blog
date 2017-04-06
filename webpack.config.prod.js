@@ -1,7 +1,7 @@
 /**
  * @fileOverview Webpack configuration file for production.
  */
-
+'use strict';
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
