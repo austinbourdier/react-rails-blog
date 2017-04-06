@@ -12,15 +12,15 @@
   "scripts": {
     "webpack": "./node_modules/webpack/bin/webpack.js --progress --colors",
     "webpack-watch": "./node_modules/webpack/bin/webpack.js --progress --colors --watch",
-    "webpack-production": "./node_modules/webpack/bin/webpack.js --colors --config webpack.config.prod"
+    "webpack-production": "./node_modules/webpack/bin/webpack.js --colors --config webpack.config.prod",
+    "heroku-postbuild": "echo This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.",
+    "build": "echo This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.",
+    "postinstall": "echo This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards."
   },
   "author": "IP",
   "license": "MIT",
   "repository": "giannisp/rails-react-boilerplate",
   "private": true,
-  "heroku-postbuild": "echo This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.",
-  "build": "echo This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.",
-  "postinstall": "echo This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.This runs afterwards.",
   "dependencies": {
     "axios": "0.15.3",
     "history": "^4.6.1",
