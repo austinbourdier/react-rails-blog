@@ -10,7 +10,7 @@
     <div id="app"></div>
     <%= yield %>
 
-    <%= javascript_include_tag asset_path('app.vendor.js', 'js') %>
-    <%= javascript_include_tag asset_path('app.js', 'js') %>
+    <%= javascript_include_tag asset_path('app.vendor.js', 'js') , :type => "text/javascript"%>
+    <%= javascript_include_tag asset_path('app.js', 'js') , :type => "text/javascript"%>
   </body>
 </html>
