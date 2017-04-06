@@ -3,13 +3,14 @@
   <head>
     <title>rails-react-boilerplate</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    "/public/dist/css/app.css" %>
-    <%= javascript_include_tag "/public/dist/js/app.vendor.js" %>
-    <%= javascript_include_tag "/public/dist/js/app.js" %>
+    <%= stylesheet_link_tag asset_path('app.css', 'css'), media: 'all' %>
   </head>
+
   <body>
     <div id="app"></div>
     <%= yield %>
 
+    <%= javascript_include_tag asset_path('app.vendor.js', 'js') , :type => "text/javascript"%>
+    <%= javascript_include_tag asset_path('app.js', 'js') , :type => "text/javascript"%>
   </body>
 </html>
