@@ -9,17 +9,10 @@ class AssetLoader
   end
 
   def self.get_asset_path(file, directory)
-    puts 'file'
-    puts file
-    puts 'directory'
-    puts directory
     root_path = Rails.application.config.assets.root_path
     file_path = nil
 
     if Rails.env.production? && AssetLoader.manifest
-      puts 'HERE'
-      puts file
-      puts AssetLoader.manifest[file]
       file_path = AssetLoader.manifest[file]
     end
 
@@ -27,10 +20,6 @@ class AssetLoader
       file_path = "#{directory}/#{file}"
     end
 
-    puts 'root_path'
-    puts root_path
-    puts 'file_path'
-    puts file_path
     return root_path + file_path
   end
 end
