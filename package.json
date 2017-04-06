@@ -19,6 +19,7 @@
   "license": "MIT",
   "repository": "giannisp/rails-react-boilerplate",
   "private": true,
+  "heroku-postbuild": "npm run webpack-production",
   "dependencies": {
     "axios": "0.15.3",
     "history": "^4.6.1",
