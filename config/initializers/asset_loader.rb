@@ -17,6 +17,8 @@ class AssetLoader
     file_path = nil
 
     if Rails.env.production? && AssetLoader.manifest
+      puts 'HERE'
+      puts AssetLoader.manifest[file]
       file_path = AssetLoader.manifest[file]
     else
       file_path = "#{directory}/#{file}"
