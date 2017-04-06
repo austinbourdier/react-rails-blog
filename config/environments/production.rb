@@ -84,19 +84,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-
-
-
-    config.cache_classes = false
-  config.eager_load = false
-  config.consider_all_requests_local       = true
-
-
-  config.assets.debug = true
-  config.assets.compile = false
-  config.assets.serve_static_assets = true
-  config.assets.digest = true
-  config.assets.raise_runtime_errors = true
-  config.assets.enabled = false
 end
