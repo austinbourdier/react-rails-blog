@@ -23,7 +23,7 @@ class AssetLoader
       file_path = AssetLoader.manifest[file]
     end
 
-    if file_path.nil
+    if file_path.nil?
       file_path = "#{directory}/#{file}"
     end
 
