@@ -3,9 +3,9 @@
   <head>
     <title>rails-react-boilerplate</title>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" media="all" href="/dist/css/app.css" />
-    <script src="/dist/js/app.vendor.js" type="text/javascript"></script>
-    <script src="/dist/js/app.js" type="text/javascript"></script>
+    <%= stylesheet_link_tag    "/dist/css/app.css" %>
+    <%= javascript_include_tag "/dist/js/app.vendor.js" %>
+    <%= javascript_include_tag "/dist/js/app.js" %>
   </head>
   <body>
     <div id="app"></div>
