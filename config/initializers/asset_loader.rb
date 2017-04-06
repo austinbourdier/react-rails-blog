@@ -21,7 +21,9 @@ class AssetLoader
       puts file
       puts AssetLoader.manifest[file]
       file_path = AssetLoader.manifest[file]
-    else
+    end
+
+    if file_path.nil
       file_path = "#{directory}/#{file}"
     end
 
