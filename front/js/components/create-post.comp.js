@@ -16,11 +16,10 @@ export default class CreatePost extends React.Component {
     );
   }
 
-  componentWillReceiveProps(nextProps, nextState) {
-    console.log(nextProps, nextState)
-  }
 }
 
 /** @const {Object} propTypes definition */
 CreatePost.propTypes = {
+  updatePostValue: React.PropTypes.func,
+  onCreatePostClick: React.PropTypes.func
 };

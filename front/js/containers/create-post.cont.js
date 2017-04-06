@@ -5,7 +5,6 @@
 import { connect } from 'react-redux';
 
 import CreatePost from '../components/create-post.comp';
-import { fetchPosts } from '../actions/posts.action';
 import { createPost, updatePostValue } from '../actions/create-post.action';
 import store from '../store';
 

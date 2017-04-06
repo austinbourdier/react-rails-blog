@@ -15,7 +15,6 @@ export default class Posts extends React.Component {
             return <p key={i}>id: {post.id}, text: {post.text}</p>;
           })
         }
-        <button onClick={this.props.onCreatePostClick}>CREATE POST</button>
       </div>
     );
   }
@@ -28,5 +27,6 @@ export default class Posts extends React.Component {
 
 /** @const {Object} propTypes definition */
 Posts.propTypes = {
-  posts: React.PropTypes.array
+  posts: React.PropTypes.array,
+  fetchPosts: React.PropTypes.func
 };
