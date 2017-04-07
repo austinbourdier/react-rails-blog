@@ -14,9 +14,8 @@ const initialState = {
 
 export default handleActions({
   [FETCH_POST_DETAILS_SUCCESS]: (state, action) => {
-    return {
-      ...state,
+    return Object.assign({}, state, {
       post: action.post
-    }
+    });
   }
 }, initialState);

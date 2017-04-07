@@ -5,7 +5,6 @@
 import axios from 'axios';
 
 import {
-  CREATE_POST_SUCCESS,
   UPDATE_POST_VALUE
 } from '../constants/reducer-actions.const';
 

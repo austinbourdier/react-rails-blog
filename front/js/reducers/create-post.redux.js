@@ -5,8 +5,7 @@
 import { handleActions } from 'redux-actions';
 
 import {
-  UPDATE_POST_VALUE,
-  CREATE_POST_SUCCESS,
+  UPDATE_POST_VALUE
 } from '../constants/reducer-actions.const';
 
 const initialState = {
@@ -16,15 +15,8 @@ const initialState = {
 
 export default handleActions({
   [UPDATE_POST_VALUE]: (state, action) => {
-    return {
-      ...state,
+    return Object.assign({}, state, {
       value: action.value
-    }
-  },
-  // [CREATE_POST_SUCCESS]: (state, action) => {
-  //   return {
-  //     ...state,
-  //     postCreated: action.postCreated
-  //   }
-  // },
+    });
+  }
 }, initialState);

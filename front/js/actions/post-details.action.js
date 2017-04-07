@@ -18,7 +18,6 @@ export const fetchPost = (id) => {
     // this could probably be updated to /posts (add a rails posts_controller.rb)
     axios.get('/post/find/' + id)
       .then((res) => {
-        console.log(res)
         dispatch({
           type: FETCH_POST_DETAILS_SUCCESS,
           post: res.data.post

@@ -10,10 +10,10 @@ export default class Posts extends React.Component {
   render() {
     return (
       <div>
-        <li><Link to="/create">CREATE POST HERE</Link></li>
+        <li><Link to='/create'>CREATE POST HERE</Link></li>
         {this.props.posts &&
           this.props.posts.map((post, i)=> {
-            return <Link to={{ pathname: "/post/" + post.id }} key={i}><p>id: {post.id}, text: {post.text}</p></Link>;
+            return <Link to={{ pathname: '/post/' + post.id }} key={i}><p>id: {post.id}, text: {post.text}</p></Link>;
           })
         }
       </div>

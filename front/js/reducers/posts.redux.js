@@ -14,9 +14,8 @@ const initialState = {
 
 export default handleActions({
   [FETCH_POSTS_SUCCESS]: (state, action) => {
-    return {
-      ...state,
+    return Object.assign({}, state, {
       posts: action.posts
-    }
+    });
   }
 }, initialState);

@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 
 export default class PostDetails extends React.Component {
   render() {
-    const post = this.props.post
+    const post = this.props.post;
     return (
       <div>
         <li><Link to="/">HOME PAGE</Link></li>
@@ -23,5 +23,7 @@ export default class PostDetails extends React.Component {
 
 /** @const {Object} propTypes definition */
 PostDetails.propTypes = {
-
+  post: React.propTypes.object,
+  fetchPost: React.propTypes.func,
+  params: React.propTypes.object
 };
