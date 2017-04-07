@@ -1,22 +1,22 @@
 /**
- * @fileOverview The Posts reducer.
+ * @fileOverview The Posts Details reducer.
  */
 
 import { handleActions } from 'redux-actions';
 
 import {
-  FETCH_POSTS_SUCCESS
+  FETCH_POST_DETAILS_SUCCESS
 } from '../constants/reducer-actions.const';
 
 const initialState = {
-  posts: []
+  post: {}
 };
 
 export default handleActions({
-  [FETCH_POSTS_SUCCESS]: (state, action) => {
+  [FETCH_POST_DETAILS_SUCCESS]: (state, action) => {
     return {
       ...state,
-      posts: action.posts
+      post: action.post
     }
   }
 }, initialState);

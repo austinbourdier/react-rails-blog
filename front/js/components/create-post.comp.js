@@ -6,6 +6,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 export default class CreatePost extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+  }
+
+  componentDidUpdate(a, b) {
+    console.log(a, b)
+  }
+
   render() {
     return (
       <div>

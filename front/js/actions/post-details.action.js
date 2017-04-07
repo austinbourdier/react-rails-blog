@@ -5,8 +5,7 @@
 import axios from 'axios';
 
 import {
-  CREATE_POST_SUCCESS,
-  UPDATE_POST_VALUE
+  FETCH_POST_DETAILS_SUCCESS
 } from '../constants/reducer-actions.const';
 
 /**
@@ -14,24 +13,19 @@ import {
  *
  * @return {Function} The action handler.
  */
-export const createPost = (value) => {
+export const fetchPost = (id) => {
   return function(dispatch) {
     // this could probably be updated to /posts (add a rails posts_controller.rb)
-    axios.post('/post/create', {value: value})
+    axios.get('/post/find/' + id)
       .then((res) => {
-        window.location = '/post/' + res.data.postCreated.id;
+        console.log(res)
+        dispatch({
+          type: FETCH_POST_DETAILS_SUCCESS,
+          post: res.data.post
+        });
       })
       .catch((err) => {
         console.log(err);
       });
-  };
-};
-
-export const updatePostValue = (value) => {
-  return function(dispatch) {
-    dispatch({
-      type: UPDATE_POST_VALUE,
-      value: value
-    });
   };
 };

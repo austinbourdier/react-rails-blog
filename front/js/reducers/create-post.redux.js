@@ -16,11 +16,15 @@ const initialState = {
 
 export default handleActions({
   [UPDATE_POST_VALUE]: (state, action) => {
-    state.value = action.value;
-    return state;
+    return {
+      ...state,
+      value: action.value
+    }
   },
-  [CREATE_POST_SUCCESS]: (state, action) => {
-    state.postCreated = action.postCreated;
-    return state;
-  },
+  // [CREATE_POST_SUCCESS]: (state, action) => {
+  //   return {
+  //     ...state,
+  //     postCreated: action.postCreated
+  //   }
+  // },
 }, initialState);

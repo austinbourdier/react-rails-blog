@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   get 'home/index'
-  post 'post/create'
+
   get 'post/posts'
-  root 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'post/:id', to: 'post#index'
+  get 'post/find/:id', to: 'post#find'
+  post 'post/create'
+
   get '*path', to: 'home#index'
+
+  root 'home#index'
 end

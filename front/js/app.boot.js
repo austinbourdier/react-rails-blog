@@ -10,6 +10,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Posts from './containers/posts.cont';
 import CreatePost from './containers/create-post.cont';
+import PostDetails from './containers/post-details.cont';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import store from './store';
@@ -27,6 +28,7 @@ appBoot.init = function() {
         <Route path='/' component={Posts}></Route>
 
         <Route path='/create' component={CreatePost}></Route>
+        <Route path='/post/:id' component={PostDetails}></Route>
       </Router>
     </Provider>,
     document.getElementById('app')
