@@ -23,7 +23,7 @@ export default class PostDetails extends React.Component {
 
 /** @const {Object} propTypes definition */
 PostDetails.propTypes = {
-  post: React.propTypes.object,
-  fetchPost: React.propTypes.func,
-  params: React.propTypes.object
+  post: React.PropTypes.object,
+  fetchPost: React.PropTypes.func,
+  params: React.PropTypes.object
 };
