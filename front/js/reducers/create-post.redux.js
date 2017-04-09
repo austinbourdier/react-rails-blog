@@ -22,6 +22,7 @@ export default handleActions({
     });
   },
   [CREATE_POST]: (state, action) => {
+    console.log(action)
     return Object.assign({}, state, {
       creating: action.creating
     });

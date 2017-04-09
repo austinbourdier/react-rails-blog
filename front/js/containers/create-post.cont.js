@@ -15,7 +15,7 @@ import store from '../store';
  */
 function mapStateToProps(state) {
   return {
-
+    creating: state.CreatePost.creating
   };
 }
 
