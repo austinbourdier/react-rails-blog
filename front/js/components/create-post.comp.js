@@ -12,7 +12,7 @@ export default class CreatePost extends React.Component {
       <div>
         <li><Link to="/">HOME PAGE</Link></li>
         <textarea rows="4" cols="50" placeholder='Type your post here' onChange={this.props.updatePostValue}></textarea>
-        <button onClick={this.props.onCreatePostClick}>CREATE POST</button>
+        <button disabled={this.props.creating} onClick={this.props.onCreatePostClick}>CREATE POST</button>
       </div>
     );
   }

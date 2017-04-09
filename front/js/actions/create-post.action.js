@@ -5,7 +5,8 @@
 import axios from 'axios';
 
 import {
-  UPDATE_POST_VALUE
+  UPDATE_POST_VALUE,
+  CREATE_POST
 } from '../constants/reducer-actions.const';
 
 /**
@@ -16,6 +17,10 @@ import {
 export const createPost = (value) => {
   return function(dispatch) {
     // this could probably be updated to /posts (add a rails posts_controller.rb)
+    dispatch({
+      type: CREATE_POST,
+      creating: true
+    });
     axios.post('/post/create', {value: value})
       .then((res) => {
         window.location = '/post/' + res.data.postCreated.id;
