@@ -22,5 +22,6 @@ export default class CreatePost extends React.Component {
 /** @const {Object} propTypes definition */
 CreatePost.propTypes = {
   updatePostValue: React.PropTypes.func,
-  onCreatePostClick: React.PropTypes.func
+  onCreatePostClick: React.PropTypes.func,
+  creating: React.PropTypes.bool
 };
