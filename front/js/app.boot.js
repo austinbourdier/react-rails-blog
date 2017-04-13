@@ -44,7 +44,7 @@ appBoot.init = function() {
 const authCheck = (() => {
   const userLoggedIn = document.cookie.match(new RegExp('current_user_id=([^;]+)'));
   if (!userLoggedIn) history.push('/login');
-})
+});
 
 // init app
 appBoot.init();
