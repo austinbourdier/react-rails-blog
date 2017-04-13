@@ -17,7 +17,7 @@ import {
 export const register = (username, password) => {
   return function(dispatch) {
     axios.post('/auth/register', {username: username, password: password})
-      .then((res) => {
+      .then(() => {
         // need to deal with session creation and local storage creation
         window.location = '/';
       })
@@ -44,8 +44,4 @@ export const updatePasswordValue = (password) => {
     });
   };
 };
-function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
-}
+

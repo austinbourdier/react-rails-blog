@@ -19,7 +19,7 @@ export const login = (username, password) => {
     axios.get('/auth/login', { params: {username: username, password: password} })
       .then((res) => {
         // need to deal with session creation and local storage creation
-        const user = res.data.user;
+        // const user = res.data.user;
       })
       .catch((err) => {
         //bad login error
