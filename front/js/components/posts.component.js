@@ -1,5 +1,5 @@
 /**
- * @fileOverview The Hello World component.
+ * @fileOverview The Posts component.
  */
 
 import React from 'react';

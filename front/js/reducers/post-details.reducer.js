@@ -6,7 +6,7 @@ import { handleActions } from 'redux-actions';
 
 import {
   FETCH_POST_DETAILS_SUCCESS
-} from '../constants/reducer-actions.const';
+} from '../constants/reducer-actions.constant';
 
 const initialState = {
   post: {}

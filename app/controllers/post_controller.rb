@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
 
   def index
     render file: 'home/index.html.erb'
@@ -11,24 +11,11 @@ class PostController < ApplicationController
   end
 
   def posts
-    puts 'posts'
-    puts 'posts'
-    puts 'posts'
-    puts 'posts'
-    puts 'posts'
     render json: {posts: Post.all}
   end
 
   def find
-    puts 'HERE'
-    puts 'HERE'
-    puts 'HERE'
-    puts 'HERE'
-    puts params[:id]
-    puts 'HERE'
-    puts 'HERE'
-    puts 'HERE'
     render json: {post: Post.find(params[:id])}, status: :ok
-
   end
+
 end

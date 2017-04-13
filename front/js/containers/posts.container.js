@@ -1,11 +1,11 @@
 /**
- * @fileOverview The Hello World container.
+ * @fileOverview The Posts container.
  */
 
 import { connect } from 'react-redux';
 
-import PostDetails from '../components/post-details.comp';
-import { fetchPost } from '../actions/post-details.action';
+import Posts from '../components/posts.component';
+import { fetchPosts } from '../actions/posts.action';
 
 /**
  * Handle state change and map it to local component props.
@@ -14,7 +14,7 @@ import { fetchPost } from '../actions/post-details.action';
  */
 function mapStateToProps(state) {
   return {
-    post: state.PostDetails.post
+    posts: state.Posts.posts
   };
 }
 
@@ -25,8 +25,8 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    fetchPost: (id) => {
-      dispatch(fetchPost(id));
+    fetchPosts: () => {
+      dispatch(fetchPosts());
     }
   };
 }
@@ -34,4 +34,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostDetails);
+)(Posts);

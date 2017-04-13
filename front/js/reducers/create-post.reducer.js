@@ -7,7 +7,7 @@ import { handleActions } from 'redux-actions';
 import {
   UPDATE_POST_VALUE,
   CREATE_POST
-} from '../constants/reducer-actions.const';
+} from '../constants/reducer-actions.constant';
 
 const initialState = {
   value: '',

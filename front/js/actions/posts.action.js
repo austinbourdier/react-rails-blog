@@ -5,8 +5,8 @@
 import axios from 'axios';
 
 import {
-  FETCH_POSTS_SUCCESS,
-} from '../constants/reducer-actions.const';
+  FETCH_POSTS_SUCCESS
+} from '../constants/reducer-actions.constant';
 
 /**
  * Fetch posts.
@@ -15,7 +15,6 @@ import {
  */
 export const fetchPosts = () => {
   return function(dispatch) {
-    // this could probably be updated to /posts (add a rails posts_controller.rb)
     axios.get('/post/posts')
       .then((res) => {
         dispatch({

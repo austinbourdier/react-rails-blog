@@ -7,10 +7,10 @@ import axios from 'axios';
 import {
   UPDATE_POST_VALUE,
   CREATE_POST
-} from '../constants/reducer-actions.const';
+} from '../constants/reducer-actions.constant';
 
 /**
- * Fetch posts.
+ * Create posts.
  *
  * @return {Function} The action handler.
  */

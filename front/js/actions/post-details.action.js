@@ -6,10 +6,10 @@ import axios from 'axios';
 
 import {
   FETCH_POST_DETAILS_SUCCESS
-} from '../constants/reducer-actions.const';
+} from '../constants/reducer-actions.constant';
 
 /**
- * Fetch posts.
+ * Fetch post details.
  *
  * @return {Function} The action handler.
  */

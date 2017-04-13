@@ -1,10 +1,10 @@
 /**
- * @fileOverview The Hello World container.
+ * @fileOverview The Create Post container.
  */
 
 import { connect } from 'react-redux';
 
-import CreatePost from '../components/create-post.comp';
+import CreatePost from '../components/create-post.component';
 import { createPost, updatePostValue } from '../actions/create-post.action';
 import store from '../store';
 
