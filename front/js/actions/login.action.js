@@ -17,7 +17,7 @@ import {
 export const login = (username, password) => {
   return function(dispatch) {
     axios.get('/auth/login', { params: {username: username, password: password} })
-      .then((res) => {
+      .then(() => {
         // need to deal with session creation and local storage creation
         // const user = res.data.user;
       })
