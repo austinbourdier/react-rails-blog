@@ -1,19 +1,35 @@
+require 'bcrypt'
+
 class AuthController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  include BCrypt
+
   def login
-    if(params[:username] == 'austin')
-      render json: {user: {name: 'Austin Bourdier', 'email': 'austinbourdier@gmail.com', 'password': '12345'}}, status: :ok
+    @user = User.find_by_username(params[:username])
+    if @user
+      @password_match = Password.new(@user.password_digest) == params[:password]
+      if @password_match
+        cookies[:current_user_id] = { :value => @user.id, :expires => 1.day.from_now }
+        render json: {user: @user}
+      else
+        render json: {err: 'bad login'}, status: 401
+      end
     else
       render json: {err: 'bad login'}, status: 401
     end
   end
 
+  def logout
+    cookies.delete :current_user_id
+    render json: {msg: 'logged out'}, status: 200
+  end
+
   def register
-    user = User.new(:username => params[:username], :password => params[:password])
-    if user.save!
-      cookies[:current_user_id] = { :value => user.id, :expires => 1.day.from_now }
-      render json: {user: user}
+    @user = User.new(:username => params[:username], :password_digest => Password.create(params[:password]))
+    if @user.save!
+      cookies[:current_user_id] = { :value => @user.id, :expires => 1.day.from_now }
+      render json: {user: @user}
     else
       render json: {err: 'bad register'}, status: 500
     end

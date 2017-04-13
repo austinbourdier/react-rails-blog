@@ -18,12 +18,12 @@ export const login = (username, password) => {
   return function(dispatch) {
     axios.get('/auth/login', { params: {username: username, password: password} })
       .then(() => {
-        // need to deal with session creation and local storage creation
-        // const user = res.data.user;
+        window.location = '/';
       })
       .catch((err) => {
         //bad login error
         console.log(err);
+        alert('bad login');
       });
   };
 };

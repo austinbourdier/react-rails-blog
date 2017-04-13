@@ -24,6 +24,7 @@ export const register = (username, password) => {
       .catch((err) => {
         //bad registration error
         console.log(err);
+        alert('bad registration');
       });
   };
 };

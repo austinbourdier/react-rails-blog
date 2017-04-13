@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :session
+  has_secure_password
 end

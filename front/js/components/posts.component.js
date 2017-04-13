@@ -10,6 +10,7 @@ export default class Posts extends React.Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.logout}>Logout</button>
         <li><Link to='/create'>CREATE POST HERE</Link></li>
         {this.props.posts &&
           this.props.posts.map((post, i)=> {
@@ -29,5 +30,6 @@ export default class Posts extends React.Component {
 /** @const {Object} propTypes definition */
 Posts.propTypes = {
   posts: React.PropTypes.array,
-  fetchPosts: React.PropTypes.func
+  fetchPosts: React.PropTypes.func,
+  logout: React.PropTypes.func
 };

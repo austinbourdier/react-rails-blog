@@ -6,12 +6,16 @@ class PostController < ApplicationController
   end
 
   def create
-    postCreated = Post.create({text: params[:value]})
-    render json: {postCreated: postCreated}
+    @post = Post.new({text: params[:value]})
+    if @post.save!
+      render json: {postCreated: @post}, status: :ok
+    else
+      render json: {err: 'bad post creation request'}, status: 400
+    end
   end
 
   def posts
-    render json: {posts: Post.all}
+    render json: {posts: Post.all}, status: :ok
   end
 
   def find

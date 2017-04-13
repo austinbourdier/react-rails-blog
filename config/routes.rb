@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get '/auth/login' , to: 'auth#login'
+  get '/auth/logout' , to: 'auth#logout'
   post '/auth/register' , to: 'auth#register'
 
   get 'post/posts'
