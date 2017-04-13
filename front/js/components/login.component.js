@@ -7,8 +7,8 @@ import { Link } from 'react-router';
 
 export default class Login extends React.Component {
   constructor(props) {
-     super(props);
-     this.login = this.login.bind(this);
+    super(props);
+    this.login = this.login.bind(this);
   }
   login(e) {
     e.preventDefault();

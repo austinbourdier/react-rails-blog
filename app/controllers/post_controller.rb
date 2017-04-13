@@ -19,7 +19,12 @@ class PostController < ApplicationController
   end
 
   def find
-    render json: {post: Post.find(params[:id])}, status: :ok
+    @post = Post.find(params[:id])
+    if @post
+      render json: {post: @post}, status: :ok
+    else
+      render json: {err: 'post does not exist'}, status: 400
+    end
   end
 
 end

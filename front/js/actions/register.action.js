@@ -18,7 +18,6 @@ export const register = (username, password) => {
   return function(dispatch) {
     axios.post('/auth/register', {username: username, password: password})
       .then(() => {
-        console.log('HERE')
         window.location = '/';
       })
       .catch((err) => {

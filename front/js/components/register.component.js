@@ -7,13 +7,12 @@ import { Link } from 'react-router';
 
 export default class Register extends React.Component {
   constructor(props) {
-     super(props);
-     this.register = this.register.bind(this);
+    super(props);
+    this.register = this.register.bind(this);
   }
 
   register(e) {
     e.preventDefault();
-    console.log(this)
     this.props.register();
   }
   render() {
