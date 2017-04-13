@@ -6,14 +6,24 @@ import React from 'react';
 import { Link } from 'react-router';
 
 export default class Register extends React.Component {
+  constructor(props) {
+     super(props);
+     this.register = this.register.bind(this);
+  }
+
+  register(e) {
+    e.preventDefault();
+    console.log(this)
+    this.props.register();
+  }
   render() {
     return (
       <div>
         <li><Link to='/login'>LOGIN HERE</Link></li>
-        <form onSubmit={this.props.register}>
+        <form onSubmit={this.register}>
           <input placeholder='Type your username here' onChange={this.props.updateUsernameValue}></input>
           <input type='password' placeholder='Type your password here' onChange={this.props.updatePasswordValue}></input>
-          <button onClick={this.props.register}>Register</button>
+          <button onClick={this.register}>Register</button>
         </form>
       </div>
     );

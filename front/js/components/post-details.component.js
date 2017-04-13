@@ -11,8 +11,7 @@ export default class PostDetails extends React.Component {
     return (
       <div>
         <li><Link to="/">HOME PAGE</Link></li>
-        POST DETAILS
-        {post.text}
+        Post {post.id}: {post.text}
       </div>
     );
   }

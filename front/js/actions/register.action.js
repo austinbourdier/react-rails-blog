@@ -18,13 +18,12 @@ export const register = (username, password) => {
   return function(dispatch) {
     axios.post('/auth/register', {username: username, password: password})
       .then(() => {
-        // need to deal with session creation and local storage creation
+        console.log('HERE')
         window.location = '/';
       })
       .catch((err) => {
         //bad registration error
-        console.log(err);
-        alert('bad registration');
+        alert(err.response.data.err);
       });
   };
 };

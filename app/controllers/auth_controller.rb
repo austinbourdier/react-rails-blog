@@ -26,12 +26,17 @@ class AuthController < ApplicationController
   end
 
   def register
-    @user = User.new(:username => params[:username], :password_digest => Password.create(params[:password]))
-    if @user.save!
-      cookies[:current_user_id] = { :value => @user.id, :expires => 1.day.from_now }
-      render json: {user: @user}
+    @username_exists = User.find_by_username(params[:username])
+    if !@username_exists
+      @user = User.new(:username => params[:username], :password_digest => Password.create(params[:password]))
+      if @user.save!
+        cookies[:current_user_id] = { :value => @user.id, :expires => 1.day.from_now }
+        render json: {user: @user}
+      else
+        render json: {err: 'bad register'}, status: 500
+      end
     else
-      render json: {err: 'bad register'}, status: 500
+      render json: {err: 'username already exists'}, status: 400
     end
   end
 
