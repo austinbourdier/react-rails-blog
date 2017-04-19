@@ -15,12 +15,20 @@ class PostController < ApplicationController
   end
 
   def posts
+<<<<<<< HEAD
     render json: {posts: Post.joins(:user).select("users.email as author_email,posts.*").all}, status: :ok
   end
 
   def find
     @post = Post.joins(:user).select("users.email as author_email,posts.*").find(params[:id])
     puts @post
+=======
+    render json: {posts: Post.all}, status: :ok
+  end
+
+  def find
+    @post = Post.find(params[:id])
+>>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
     if @post
       render json: {post: @post}, status: :ok
     else

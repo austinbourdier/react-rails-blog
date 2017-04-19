@@ -36,7 +36,11 @@ class AuthController < ApplicationController
         render json: {err: 'bad register'}, status: 500
       end
     else
+<<<<<<< HEAD
       render json: {err: 'email already exists'}, status: 400
+=======
+      render json: {err: 'username already exists'}, status: 400
+>>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
     end
   end
 

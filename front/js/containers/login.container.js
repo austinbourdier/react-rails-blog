@@ -5,7 +5,11 @@
 import { connect } from 'react-redux';
 
 import Login from '../components/login.component';
+<<<<<<< HEAD
 import { updateEmailValue, updatePasswordValue, login } from '../actions/login.action';
+=======
+import { updateUsernameValue, updatePasswordValue, login } from '../actions/login.action';
+>>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
 import store from '../store';
 
 /**
@@ -15,7 +19,11 @@ import store from '../store';
  */
 function mapStateToProps(state) {
   return {
+<<<<<<< HEAD
     email: state.Login.email,
+=======
+    username: state.Login.username,
+>>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
     password: state.Login.password
   };
 }
@@ -27,15 +35,24 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
+<<<<<<< HEAD
     updateEmailValue: (event) => {
       dispatch(updateEmailValue(event.target.value));
+=======
+    updateUsernameValue: (event) => {
+      dispatch(updateUsernameValue(event.target.value));
+>>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
     },
     updatePasswordValue: (event) => {
       dispatch(updatePasswordValue(event.target.value));
     },
     login: () => {
       const credentials = store.getState().Login;
+<<<<<<< HEAD
       dispatch(login(credentials.email, credentials.password));
+=======
+      dispatch(login(credentials.username, credentials.password));
+>>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
     }
   };
 }

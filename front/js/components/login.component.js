@@ -19,7 +19,7 @@ export default class Login extends React.Component {
       <div>
         <li><Link to='/register'>REGISTER HERE</Link></li>
         <form onSubmit={this.login}>
-          <input placeholder='Type your username here' onChange={this.props.updateEmailValue}></input>
+          <input placeholder='Type your email here' onChange={this.props.updateEmailValue}></input>
           <input type='password' placeholder='Type your password here' onChange={this.props.updatePasswordValue}></input>
           <button onClick={this.login}>Login</button>
         </form>
