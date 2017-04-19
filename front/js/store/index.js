@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { routerReducer } from 'react-router-redux';
 import Login from '../reducers/login.reducer';
-import Navbar from '../reducers/navbar.reducer';
+// import Navbar from '../reducers/navbar.reducer';
 import UserPage from '../reducers/user-page.reducer';
 import Register from '../reducers/register.reducer';
 import CreatePost from '../reducers/create-post.reducer';

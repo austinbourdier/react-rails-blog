@@ -8,22 +8,13 @@ require('../css/app.scss');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-<<<<<<< HEAD
 import { Router, IndexRoute, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import App from './components/app.component';
-import Navbar from './containers/navbar.container';
 import Login from './containers/login.container';
 import Register from './containers/register.container';
 import Posts from './containers/posts.container';
 import UserPage from './containers/user-page.container';
-=======
-import { Router, Route, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import Login from './containers/login.container';
-import Register from './containers/register.container';
-import Posts from './containers/posts.container';
->>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
 import CreatePost from './containers/create-post.container';
 import PostDetails from './containers/post-details.container';
 import store from './store';
@@ -34,7 +25,6 @@ let appBoot = module.exports = {};
 appBoot.init = function() {
   console.log('init() :: App starts booting...');
 
-<<<<<<< HEAD
   ReactDOM.render(
     <div>
       <Provider store={store}>
@@ -52,21 +42,6 @@ appBoot.init = function() {
         </Router>
       </Provider>
     </div>,
-=======
-
-  ReactDOM.render(
-    <Provider store={store}>
-      <Router history={history}>
-        <Route path='/' onEnter={authCheck} component={Posts}></Route>
-
-        <Route path='/login' component={Login}></Route>
-        <Route path='/register' component={Register}></Route>
-
-        <Route path='/create' onEnter={authCheck} component={CreatePost}></Route>
-        <Route path='/post/:id' onEnter={authCheck} component={PostDetails}></Route>
-      </Router>
-    </Provider>,
->>>>>>> ccdbf95d0682691e7ec1e59871ab281f86b45c86
     document.getElementById('app')
   );
 

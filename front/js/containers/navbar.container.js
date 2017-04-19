@@ -5,7 +5,6 @@
 import { connect } from 'react-redux';
 
 import Navbar from '../components/navbar.component';
-import store from '../store';
 
 /**
  * Handle state change and map it to local component props.

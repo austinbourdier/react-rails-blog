@@ -4,7 +4,6 @@ import Navbar from './navbar.component';
  */
 
 import React from 'react';
-import { Link } from 'react-router';
 
 export default class App extends React.Component {
   render() {
@@ -17,10 +16,10 @@ export default class App extends React.Component {
           {this.props.children}
         </div>
       </div>
-    )
+    );
   }
 }
 
 App.propTypes = {
-
+  children: React.PropTypes.object
 };

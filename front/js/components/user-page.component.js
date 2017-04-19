@@ -17,8 +17,9 @@ export default class UserPage extends React.Component {
                 <p>id: {post.id}, title: {post.title}</p>
                 <p>body: {post.body}</p>
               </Link>
-            )
-        })
+            );
+          }
+        )
       }
       </div>
     );
@@ -31,5 +32,6 @@ export default class UserPage extends React.Component {
 
 /** @const {Object} propTypes definition */
 UserPage.propTypes = {
-  user: React.PropTypes.object
+  user: React.PropTypes.object,
+  fetchUserPage: React.PropTypes.func
 };

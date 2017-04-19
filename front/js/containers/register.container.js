@@ -28,7 +28,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     updateEmailValue: (event) => {
-      console.log(event.target.value)
       dispatch(updateEmailValue(event.target.value));
     },
     updatePasswordValue: (event) => {

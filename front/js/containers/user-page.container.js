@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 import UserPage from '../components/user-page.component';
 import { fetchUserPage } from '../actions/user-page.action';
-import store from '../store';
 
 /**
  * Handle state change and map it to local component props.

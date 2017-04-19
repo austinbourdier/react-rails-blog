@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
       if (cookie.match(new RegExp('current_user_id=([^;]+)'))) {
         userId = cookie.split('=')[1];
       }
-    })
+    });
     return (
       <div>
         <li><Link to="/">HOME PAGE</Link></li>
