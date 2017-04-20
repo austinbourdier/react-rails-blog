@@ -1,11 +1,11 @@
 /**
- * @fileOverview The Hello World container.
+ * @fileOverview Post Details container.
  */
 
 import { connect } from 'react-redux';
 
-import HelloWorld from '../components/hello-world.comp';
-import { fetchServerTimestamp } from '../actions/server-timestamp.action';
+import PostDetails from '../components/post-details.component';
+import { fetchPost } from '../actions/post-details.action';
 
 /**
  * Handle state change and map it to local component props.
@@ -14,7 +14,7 @@ import { fetchServerTimestamp } from '../actions/server-timestamp.action';
  */
 function mapStateToProps(state) {
   return {
-    serverTimestamp: state.serverTimestamp,
+    post: state.PostDetails.post
   };
 }
 
@@ -25,13 +25,13 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    onFetchServerTimestamp: () => {
-      dispatch(fetchServerTimestamp());
-    },
+    fetchPost: (id) => {
+      dispatch(fetchPost(id));
+    }
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HelloWorld);
+)(PostDetails);

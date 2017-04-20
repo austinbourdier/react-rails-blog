@@ -26,7 +26,6 @@ class AuthController < ApplicationController
   end
 
   def register
-    console.log(User)
     @email_exists = User.find_by_email(params[:email])
     if !@email_exists
       @user = User.new(:email => params[:email], :password_digest => Password.create(params[:password]))
