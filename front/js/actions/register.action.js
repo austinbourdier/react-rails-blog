@@ -21,8 +21,9 @@ export const register = (email, password) => {
         window.location = '/';
       })
       .catch((err) => {
-        //bad registration error
-        alert(err.response.data.err);
+        if(err.response.status == 422) {
+          alert('This email already exists in our system, please choose another.')
+        };
       });
   };
 };
