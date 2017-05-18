@@ -5,6 +5,8 @@
 import { connect } from 'react-redux';
 
 import Navbar from '../components/navbar.component';
+import { logout } from '../actions/logout.action';
+import { getUserInfo } from '../actions/navbar.action';
 
 /**
  * Handle state change and map it to local component props.
@@ -13,7 +15,7 @@ import Navbar from '../components/navbar.component';
  */
 function mapStateToProps(state) {
   return {
-
+    user: state.Navbar.user
   };
 }
 
@@ -24,10 +26,14 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-
+    logout: () => {
+      dispatch(logout());
+    },
+    getUserInfo: () => {
+      dispatch(getUserInfo());
+    }
   };
 }
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

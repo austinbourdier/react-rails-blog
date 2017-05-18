@@ -4,6 +4,8 @@
 
 import React from 'react';
 import { Link } from 'react-router';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 export default class Register extends React.Component {
   constructor(props) {
@@ -20,9 +22,9 @@ export default class Register extends React.Component {
       <div>
         <li><Link to='/login'>LOGIN HERE</Link></li>
         <form onSubmit={this.register}>
-          <input placeholder='Type your email here' onChange={this.props.updateEmailValue}></input>
-          <input type='password' placeholder='Type your password here' onChange={this.props.updatePasswordValue}></input>
-          <button onClick={this.register}>Register</button>
+          <TextField hintText='Type your email here' onChange={this.props.updateEmailValue} type='email' /><br/>
+          <TextField hintText='Type your password here' onChange={this.props.updatePasswordValue} type='password' /><br/>
+          <RaisedButton label='Register' onClick={this.register} />
         </form>
       </div>
     );

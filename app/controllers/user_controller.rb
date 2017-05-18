@@ -16,6 +16,9 @@ class UserController < ApplicationController
     render json: {user: user}, status: :ok
   end
 
-
+  def me
+    user = User.find(cookies[:current_user_id])
+    render json: {user: user}, status: :ok
+  end
 
 end

@@ -13,12 +13,16 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import App from './components/app.component';
 import Login from './containers/login.container';
 import Register from './containers/register.container';
-import Posts from './containers/posts.container';
+import Home from './containers/home.container';
 import UserPage from './containers/user-page.container';
 import CreatePost from './containers/create-post.container';
 import PostDetails from './containers/post-details.container';
 import store from './store';
 const history = syncHistoryWithStore(browserHistory, store);
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 let appBoot = module.exports = {};
 
@@ -26,11 +30,11 @@ appBoot.init = function() {
   console.log('init() :: App starts booting...');
 
   ReactDOM.render(
-    <div>
+    <MuiThemeProvider>
       <Provider store={store}>
         <Router history={history}>
           <Route path='/' component={App}>
-            <IndexRoute onEnter={authCheck} component={Posts}/>
+            <IndexRoute onEnter={authCheck} component={Home}/>
             <Route path='/user/:id' onEnter={authCheck} component={UserPage}></Route>
 
             <Route path='/login' component={Login}></Route>
@@ -41,7 +45,7 @@ appBoot.init = function() {
           </Route>
         </Router>
       </Provider>
-    </div>,
+    </MuiThemeProvider>,
     document.getElementById('app')
   );
 
