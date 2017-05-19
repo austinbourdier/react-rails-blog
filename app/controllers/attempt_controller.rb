@@ -5,10 +5,10 @@ class AttemptController < ApplicationController
 
   def log
     attempt = Attempt.new(
-      image_url: params[:image]["image_url"],
+      image_url: params[:image]["imageUrl"],
       answer: params[:answer],
       tags: params[:image]["tags"],
-      answer_time: params[:answer_time],
+      answer_time: params[:answerTime],
       user_id: cookies[:current_user_id]
     )
     if attempt.save!

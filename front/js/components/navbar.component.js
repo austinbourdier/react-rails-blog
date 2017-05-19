@@ -4,7 +4,6 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
 
 export default class Navbar extends React.Component {
   render() {
@@ -37,5 +36,7 @@ export default class Navbar extends React.Component {
 
 /** @const {Object} propTypes definition */
 Navbar.propTypes = {
-  logout: React.PropTypes.func
+  getUserInfo: React.PropTypes.func,
+  logout: React.PropTypes.func,
+  user: React.PropTypes.object
 };

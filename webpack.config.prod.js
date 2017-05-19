@@ -1,3 +1,4 @@
+'use strict';
 /**
  * @fileOverview Webpack configuration file for production.
  */

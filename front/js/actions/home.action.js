@@ -31,33 +31,32 @@ export const fetchImages = () => {
       {name:'cat', tags: ['cat', 'cats', 'animal', 'animals', 'pet', 'pets'], limit: 20},
       {name:'horse', tags: ['horse', 'horses', 'animal', 'animals', 'farm'], limit: 20},
       {name:'cow', tags: ['cow', 'cows', 'animal', 'animals', 'farm'], limit: 20}
-    ]
+    ];
     const randomRequest = choices[Math.floor(Math.random() * choices.length)];
     axios.get('https://api.gettyimages.com/v3/search/images?phrase=' + randomRequest.name +
       '&minimum_size=medium&fields=comp&orientations=Square&page_size=1&page=' +
       Math.ceil(Math.random()*randomRequest.limit), {headers: {
-      'Api-Key': 't2z35c9frtrpqmkzwjktbq2j'
-    }})
-      .then((res) => {
-        res.data.images.forEach((image) => {
-          image.tags = randomRequest.tags;
+        'Api-Key': 't2z35c9frtrpqmkzwjktbq2j'
+      }})
+        .then((res) => {
+          res.data.images.forEach((image) => {
+            image.tags = randomRequest.tags;
+          });
+          dispatch({
+            type: FETCH_IMAGE_SUCCESS,
+            images: res.data.images
+          });
+          dispatch({
+            type: SUBMITTING_ANSWER,
+            submitting: false
+          });
         })
-        dispatch({
-          type: FETCH_IMAGE_SUCCESS,
-          images: res.data.images
+        .catch(() => {
+          dispatch({
+            type: SUBMITTING_ANSWER,
+            submitting: false
+          });
         });
-        dispatch({
-          type: SUBMITTING_ANSWER,
-          submitting: false
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        dispatch({
-          type: SUBMITTING_ANSWER,
-          submitting: false
-        });
-      });
   };
 };
 
@@ -67,17 +66,17 @@ export const updateAnswerText = (answerText) => {
       type: UPDATE_ANSWER_TEXT,
       answerText: answerText
     });
-  }
+  };
 };
 
 
-export const submitImageAnswer = (answer, answer_time, image) => {
+export const submitImageAnswer = (answer, answerTime, image) => {
   return function(dispatch) {
     dispatch({
       type: SUBMITTING_ANSWER,
       submitting: true
     });
-    axios.post('/attempt/log', {answer: answer, answer_time: answer_time, image: image})
+    axios.post('/attempt/log', {answer: answer, answerTime: answerTime, image: image})
       .then((res) => {
         dispatch({
           type: SUBMIT_ANSWER_SUCCESS,
@@ -87,5 +86,5 @@ export const submitImageAnswer = (answer, answer_time, image) => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 };
