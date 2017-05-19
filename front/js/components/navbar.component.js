@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
         <nav className='navbar navbar-default navbar-fixed-top' id='navbar'>
           <div className='container'>
             <ul className="nav navbar-nav">
-              <li>Current User: {this.props.user.email}</li><br/
+              <li>Current User: {this.props.user.email}</li><br/>
               <li onClick={this.props.logout}>Logout</li>
             </ul>
           </div>
