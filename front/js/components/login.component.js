@@ -4,8 +4,6 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -19,11 +17,14 @@ export default class Login extends React.Component {
   render() {
     return (
       <div>
-        <li><Link to='/register'>REGISTER HERE</Link></li>
-        <form onSubmit={this.login}>
-          <TextField hintText='Type your email here' onChange={this.props.updateEmailValue} type='email' /><br/>
-          <TextField hintText='Type your password here' onChange={this.props.updatePasswordValue} type='password' /><br/>
-          <RaisedButton label='Login' onClick={this.login} />
+        <form className='form-signin' onSubmit={this.login}>
+          <h2 className='form-signin-heading'>Please sign in</h2>
+          <label htmlFor='inputEmail' className='sr-only'>Email address</label>
+          <input onChange={this.props.updateEmailValue} type='email' id='inputEmail' className='form-control' placeholder='Email address' required=''/>
+          <label htmlFor='inputPassword' className='sr-only'>Password</label>
+          <input onChange={this.props.updatePasswordValue} type='password' id='inputPassword' className='form-control' placeholder='Password' required=''/>
+          <button className='btn btn-lg btn-primary btn-block' type='submit' onClick={this.login}>Sign in</button>
+          <li><Link to='/register'>REGISTER HERE</Link></li>
         </form>
       </div>
     );

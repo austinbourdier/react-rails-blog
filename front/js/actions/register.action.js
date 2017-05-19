@@ -23,6 +23,8 @@ export const register = (email, password) => {
       .catch((err) => {
         if(err.response.status == 422) {
           alert('This email already exists in our system, please choose another.');
+        } else {
+          alert('Error, please try again.');
         }
       });
   };

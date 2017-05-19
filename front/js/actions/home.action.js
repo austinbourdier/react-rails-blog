@@ -25,8 +25,6 @@ export const fetchImages = () => {
       {name:'snow', tags: ['snow', 'cold', 'winter', 'ice', 'snowy'], limit: 20},
       {name:'tree', tags: ['tree', 'trees', 'nature', 'green', 'bush', 'leaves', 'leaf'], limit: 20},
       {name:'mouse', tags: ['mouse', 'mice', 'rat', 'rats', 'rodent', 'rodents'], limit: 20},
-      {name:'wine', tags: ['wine', 'alcohol', 'glass', 'drink', 'purple', 'liquid'], limit: 20},
-      {name:'beer', tags: ['beer', 'alcohol', 'drink'], limit: 20},
       {name:'dog', tags: ['dog', 'dogs', 'animal', 'animals', 'pet', 'pets'], limit: 20},
       {name:'cat', tags: ['cat', 'cats', 'animal', 'animals', 'pet', 'pets'], limit: 20},
       {name:'horse', tags: ['horse', 'horses', 'animal', 'animals', 'farm'], limit: 20},

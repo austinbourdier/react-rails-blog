@@ -15,12 +15,10 @@ export default class Navbar extends React.Component {
     });
     return (
       <div>
-        <nav className='navbar navbar-default navbar-fixed-top'>
+        <nav className='navbar navbar-default navbar-fixed-top' id='navbar'>
           <div className='container'>
             <ul className="nav navbar-nav">
-              <li><Link to='/'>HOME PAGE</Link></li>
-              <li><Link to={'/user/' + userId}>User Stats</Link></li>
-              <li>Current User: {this.props.user.email}</li>
+              <li>Current User: {this.props.user.email}</li><br/>
               <li onClick={this.props.logout}>Logout</li>
             </ul>
           </div>

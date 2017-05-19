@@ -23,7 +23,7 @@ export const login = (email, password) => {
       .catch((err) => {
         //bad login error
         console.log(err);
-        alert('bad login');
+        alert('bad login, please try again');
       });
   };
 };
