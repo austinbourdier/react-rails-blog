@@ -14,17 +14,16 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <div className='card'>
-          <img id='image' onLoad={this.handleImageLoaded.bind(this)} className='card-img-top img-responsive' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
+        <div className='card' id='card-container'>
+          <img onLoad={this.handleImageLoaded.bind(this)} className='card-img-top img-responsive' id='image' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
           <div className='card-block'>
-            <h4 className='card-title'>In one word, what do you see?</h4>
+            <h1 className='card-title' id='title-instruction'>In one word, what do you see?</h1>
             <div className='form-group row'>
-              <label htmlFor='answer-input' className='col-2 col-form-label' style={{'paddingTop': '8px'}}>Answer</label>
-              <div className='col-10'>
-                <input className='form-control' type='text' style={{width: '100%'}} value={this.props.answerText} onChange={this.props.updateAnswerText} id='answer-input' />
+              <div className='col-12'>
+                <input className='form-control' placeholder='type here...' type='text' style={{width: '100%'}} value={this.props.answerText} onChange={this.props.updateAnswerText} id='answer-input' autofocus/>
               </div>
             </div>
-            <button disabled={this.props.submitting} href='#' className='btn btn-primary' style={{width: '100%'}} onClick={this.submitImage}>Submit!</button>
+            <button disabled={this.props.submitting} href='#' className='btn btn-primary' onClick={this.submitImage} id='submit-button'>Submit!</button>
           </div>
         </div>
       </div>
@@ -48,8 +47,8 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById('answer-input').focus();
     this.props.fetchImages();
+    document.getElementById('answer-input').focus();
   }
 
 }

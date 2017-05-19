@@ -1,0 +1,31 @@
+@media (min-width:320px)  {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  #image {
+    width: 650px;
+    margin: auto;
+  }
+  #card-container {
+    width: 650px;
+    margin: auto;
+  }
+  #title-instruction {
+    text-align: center;
+    font-size: 40px;
+  }
+  #submit-button {
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    font-size: 30px;
+  }
+  #answer-input {
+    height: 100px;
+
+    font-size: 40px;
+  }
+}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
