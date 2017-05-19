@@ -57,7 +57,7 @@ export default class Home extends React.Component {
 /** @const {Object} propTypes definition */
 Home.propTypes = {
   images: React.PropTypes.array,
-  submitting: React.PropTypes.boolean,
+  submitting: React.PropTypes.bool,
   answerText: React.PropTypes.string,
   fetchImages: React.PropTypes.func,
   submitImageAnswer: React.PropTypes.func,
