@@ -20,7 +20,7 @@ export default class Home extends React.Component {
             <h1 className='card-title' id='title-instruction'>In one word, what do you see?</h1>
             <div className='form-group row'>
               <div className='col-12'>
-                <input className='form-control' placeholder='type here...' type='text' style={{width: '100%'}} value={this.props.answerText} onChange={this.props.updateAnswerText} id='answer-input' />
+                <input className='form-control' placeholder='type here...' type='text' style={{width: '100%'}} value={this.props.answerText} onChange={this.props.updateAnswerText} id='answer-input' autoFocus/>
               </div>
             </div>
             <button disabled={this.props.submitting} href='#' className='btn btn-primary' onClick={this.submitImage} id='submit-button'>Submit!</button>
