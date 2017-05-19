@@ -12,10 +12,16 @@ export default class Home extends React.Component {
   }
 
   render() {
+    let img;
+    if(this.props.images) {
+      img = <img onLoad={this.handleImageLoaded.bind(this)} className='card-img-top img-responsive' id='image' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
+    } else {
+      img = <img className='card-img-top img-responsive' id='image-loading' src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif'></img>
+    }
     return (
       <div>
         <div className='card' id='card-container'>
-          <img onLoad={this.handleImageLoaded.bind(this)} className='card-img-top img-responsive' id='image' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
+          {img}
           <div className='card-block'>
             <h1 className='card-title' id='title-instruction'>In one word, what do you see?</h1>
             <div className='form-group row'>
