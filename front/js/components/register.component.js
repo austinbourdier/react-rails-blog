@@ -4,8 +4,6 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 
 export default class Register extends React.Component {
   constructor(props) {
