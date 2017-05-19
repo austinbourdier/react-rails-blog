@@ -14,7 +14,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <div className='card' style={{width: '30rem'}}>
+        <div className='card'>
           <img id='image' onLoad={this.handleImageLoaded.bind(this)} className='card-img-top img-responsive' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
           <div className='card-block'>
             <h4 className='card-title'>In one word, what do you see?</h4>
