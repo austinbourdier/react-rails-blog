@@ -8,6 +8,7 @@ class AttemptController < ApplicationController
       image_url: params[:image]["image_url"],
       answer: params[:answer],
       tags: params[:image]["tags"],
+      answer_time: params[:answer_time],
       user_id: cookies[:current_user_id]
     )
     if attempt.save!

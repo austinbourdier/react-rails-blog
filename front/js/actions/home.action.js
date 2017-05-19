@@ -71,13 +71,13 @@ export const updateAnswerText = (answerText) => {
 };
 
 
-export const submitImageAnswer = (answer, image) => {
+export const submitImageAnswer = (answer, answer_time, image) => {
   return function(dispatch) {
     dispatch({
       type: SUBMITTING_ANSWER,
       submitting: true
     });
-    axios.post('/attempt/log', {answer: answer, image: image})
+    axios.post('/attempt/log', {answer: answer, answer_time: answer_time, image: image})
       .then((res) => {
         dispatch({
           type: SUBMIT_ANSWER_SUCCESS,

@@ -16,7 +16,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <div className="card" style={{width: "30rem"}}>
-          <img id='image' className="card-img-top" style={{height: "300px", width: 'auto'}} height='300px' width='300px' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
+          <img id='image' onLoad={this.handleImageLoaded.bind(this)} className="card-img-top" style={{height: "300px", width: 'auto'}} height='300px' width='300px' src={this.props.images ? this.props.images[0].display_sizes[0].uri : null}></img>
           <div className="card-block">
             <h4 className="card-title">In one word, what do you see?</h4>
             <div className="form-group row">
@@ -32,10 +32,15 @@ export default class Home extends React.Component {
     );
   }
 
+  handleImageLoaded () {
+    this.imageLoaded = new Date().getTime();
+  }
+
   submitImage () {
+    const answerTime = new Date().getTime() - this.imageLoaded;
     const imageUrl = this.props.images[0] ? this.props.images[0].display_sizes[0].uri : "";
     const tags = this.props.images[0] ? this.props.images[0].tags : "";
-    this.props.submitImageAnswer(this.props.answerText, {
+    this.props.submitImageAnswer(this.props.answerText, answerTime, {
       image_url: imageUrl,
       tags: tags
     })

@@ -33,9 +33,9 @@ function mapDispatchToProps(dispatch) {
     updateAnswerText: (event) => {
       dispatch(updateAnswerText(event.target.value));
     },
-    submitImageAnswer: (answer, image) => {
+    submitImageAnswer: (answer, answer_time, image) => {
       dispatch(updateAnswerText(''));
-      dispatch(submitImageAnswer(answer, image));
+      dispatch(submitImageAnswer(answer, answer_time, image));
     }
   };
 }
